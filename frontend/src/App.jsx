@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import './App.css';
 import BookOrderPage from "./pages/BookOrderPage";
 import './styles/navbar.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function App() {
