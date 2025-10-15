@@ -1,30 +1,33 @@
 import { Link } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer className="user_footer">
-      <p>© 2025 5k Gibi Gubae Book Store. All rights reserved.</p>
-      
-      <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/">Profile</Link>
-        <Link to="/">Cart</Link>
-        <Link to="/">Delivery History</Link>
+    <footer className="bg-light text-center text-muted py-4 mt-5 border-top">
+      <div className="container">
+        <h5 className="fw-bold text-primary mb-3">📚 BookStore</h5>
+        <ul className="list-inline mb-3">
+          <li className="list-inline-item mx-2">
+            <Link className="text-decoration-none text-muted" to="/about">
+              About
+            </Link>
+          </li>
+          <li className="list-inline-item mx-2">
+            <Link className="text-decoration-none text-muted" to="/contact">
+              Contact
+            </Link>
+          </li>
+          <li className="list-inline-item mx-2">
+            <Link className="text-decoration-none text-muted" to="/books">
+              Books
+            </Link>
+          </li>
+        </ul>
+        <p className="mb-0 small">
+          © {new Date().getFullYear()} BookStore. All rights reserved.
+        </p>
       </div>
-
-      <p>
-        Contact us: <a href="mailto:5kgibigubae@gmail.com">5kgibigubae@gmail.com</a>
-      </p>
-
-      <p>
-        Follow us on social media:{" "}
-        <a href="https://www.facebook.com/5kgibigubae" target="_blank" rel="noopener noreferrer">Facebook</a>,{" "}
-        <a href="https://www.instagram.com/5kgibigubae" target="_blank" rel="noopener noreferrer">Instagram</a>,{" "}
-        <a href="https://www.twitter.com/5kgibigubae" target="_blank" rel="noopener noreferrer">Twitter</a>
-      </p>
     </footer>
   );
-}
+};
 
 export default Footer;
