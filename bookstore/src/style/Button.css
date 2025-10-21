@@ -1,0 +1,39 @@
+/* Shared styles for all buttons */
+.custom-btn {
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent; /* default border */
+}
+
+/* Primary button: filled */
+.custom-btn.primary {
+  background-color: #FBC40A;
+  color: #745A04;
+  border: 2px solid #FBC40A;
+}
+
+.custom-btn.primary:hover {
+  filter: brightness(0.9); /* subtle hover effect */
+}
+
+/* Outline button: subtle */
+.custom-btn.outline {
+  background-color: transparent;
+  color: #FBC40A;
+  border: 2px solid #FBC40A;
+}
+
+.custom-btn.outline:hover {
+  background-color: #FBC40A;
+  color: #745A04;
+}
+
+/* Disabled state */
+.custom-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

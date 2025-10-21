@@ -1,4 +1,5 @@
 import React from "react";
+import "../style/Button.css";
 
 const Button = ({ variant = "primary", children, onClick, disabled }) => {
   return (
