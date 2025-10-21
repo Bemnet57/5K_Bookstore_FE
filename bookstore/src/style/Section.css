@@ -1,0 +1,27 @@
+.section-container {
+  margin-bottom: 3rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #745A04;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.section-title:hover {
+  color: #FBC40A;
+}
+
+.section-books {
+  display: flex;
+  flex-wrap: wrap;
+}
