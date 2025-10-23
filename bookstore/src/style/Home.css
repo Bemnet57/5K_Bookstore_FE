@@ -1,0 +1,17 @@
+.home-page {
+  background-color: #FEF7DE;
+  min-height: 100vh;
+  color: #745A04;
+}
+
+/* Section titles inherit their style from Section.jsx */
+.no-books-text {
+  color: #745A04;
+  font-size: 1rem;
+  background-color: #FEF7DE;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 250px;
+  margin: 0 auto;
+  opacity: 0.9;
+}

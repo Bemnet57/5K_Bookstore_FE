@@ -9,7 +9,7 @@ const NavbarComponent = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const query = e.target.search.value.trim();
-    if (query) navigate(`/search?q=${query}`);
+    if (query) navigate(`/books?search=${query}`);
   };
 
   return (
@@ -22,8 +22,14 @@ const NavbarComponent = () => {
 
         {/* Navigation links */}
         <Nav className="mx-auto">
-          <Link to="/books" className="nav-link">
-            Books
+          <Link to="/books?filter=most-reads" className="nav-link">
+            Most Reads
+          </Link>
+          <Link to="/books?filter=available" className="nav-link">
+            Available
+          </Link>
+          <Link to="/books?filter=newest" className="nav-link">
+            Newest In
           </Link>
           <Link to="/profile" className="nav-link">
             Profile

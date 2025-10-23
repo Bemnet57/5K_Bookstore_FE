@@ -1,0 +1,64 @@
+.delivery-container {
+  background-color: #fffcf8;
+  min-height: 100vh;
+  padding: 3rem 2rem;
+}
+
+.delivery-row {
+  gap: 2rem;
+}
+
+.book-section {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.delivery-section {
+  background-color: #fef7de;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.delivery-toggle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delivery-btn {
+  flex: 1;
+  margin: 0 5px;
+  background-color: transparent;
+  border: 1px solid #fbc40a;
+  color: #fbc40a;
+}
+
+.delivery-btn.active {
+  background-color: #fbc40a;
+  color: #745a04;
+  border-color: #fbc40a;
+}
+
+.delivery-card {
+  background-color: #fffcf8;
+  border: none;
+  padding: 1.5rem;
+}
+
+.delivery-title {
+  color: #745a04;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.delivery-input {
+  background-color: #fef7de;
+  border: 1px solid #fbc40a;
+  color: #745a04;
+}
+
+.delivery-input:focus {
+  border-color: #745a04;
+  box-shadow: 0 0 0 0.2rem rgba(251, 196, 10, 0.25);
+}

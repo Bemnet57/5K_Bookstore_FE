@@ -1,22 +1,17 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "../style/BookCard.css";
+import { useNavigate } from "react-router-dom";
 
-const BookCard = ({ id, image, title, author }) => {
+const BookCard = ({ title, author }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/books/${id}`);
+    navigate(`/book/${title.toLowerCase().replace(/\s+/g, "-")}`);
   };
 
   return (
     <div className="book-card" onClick={handleClick}>
-      <div className="book-image">
-        <img
-          src={image || "/placeholder-book.jpg"} // placeholder if image missing
-          alt={title}
-        />
-      </div>
+      <div className="book-image-placeholder"></div>
       <div className="book-info">
         <h5 className="book-title">{title}</h5>
         <p className="book-author">{author}</p>
