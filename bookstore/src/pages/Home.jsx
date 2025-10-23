@@ -1,48 +1,37 @@
 import React from "react";
-import "../style/Home.css";
-import Section from "../components/Section";
 import BookCard from "../components/BookCard";
-import { Container, Row, Col } from "react-bootstrap";
+import DeliverySection from "../pages/DeliveryPage";
+import "../style/Home.css";
+import "../style/Section.css";
 
 const Home = () => {
-  // temporary — will be filled from backend later
-  const mostRead = [];
-  const availableBooks = [];
-  const newestIn = [];
-
-  const renderBooks = (books) => {
-    if (books.length === 0) {
-      return (
-        <p className="no-books-text text-center">No books for now.</p>
-      );
-    }
-
-    return (
-      <Row className="g-4">
-        {books.map((book) => (
-          <Col key={book.id} xs={12} sm={6} md={3}>
-            <BookCard title={book.title} author={book.author} />
-          </Col>
-        ))}
-      </Row>
-    );
-  };
-
   return (
-    <div className="home-page">
-      <Container className="py-5">
-        <Section title="Most Read" link="/books/most-read">
-          {renderBooks(mostRead)}
-        </Section>
+    <div className="home-container bg-[#FFFCF8]">
+      <section id="most-read" className="py-8">
+        <h3 className="section-title">Most Read</h3>
+        <div className="grid grid-cols-3 gap-4">
+          {/* map through mostReadBooks */}
+          <BookCard />
+        </div>
+      </section>
 
-        <Section title="Available Books" link="/books/available">
-          {renderBooks(availableBooks)}
-        </Section>
+      <section id="available" className="py-8">
+        <h3 className="section-title">Available Books</h3>
+        <div className="grid grid-cols-3 gap-4">
+          {/* map through availableBooks */}
+        </div>
+      </section>
 
-        <Section title="Newest In" link="/books/newest">
-          {renderBooks(newestIn)}
-        </Section>
-      </Container>
+      <section id="newest" className="py-8">
+        <h3 className="section-title">Newest In</h3>
+        <div className="grid grid-cols-3 gap-4">
+          {/* map through newestBooks */}
+        </div>
+      </section>
+
+      <section id="delivery" className="py-8">
+        <DeliverySection />
+      </section>
     </div>
   );
 };

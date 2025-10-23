@@ -1,0 +1,98 @@
+/* Root color variables — match your design palette */
+:root {
+  --bg-white: #FFFCF8;
+  --bg-card: #FEF7DE;
+  --accent-gold: #FBC40A;
+  --text-dark: #745A04;
+  --text-black: #181301;
+}
+
+/* ===== NAVBAR BASE ===== */
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg-white);
+  backdrop-filter: blur(0px);
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 0.8rem 0;
+}
+
+/* ===== BLUR ON SCROLL ===== */
+.custom-navbar.scrolled {
+  background: rgba(255, 252, 248, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== LOGO ===== */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.logo-image {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.logo-text {
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ===== NAV LINKS ===== */
+.nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+  margin: 0 0.6rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent-gold) !important;
+  text-decoration: none;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-form {
+  width: 230px;
+}
+
+.search-input {
+  background-color: var(--bg-card);
+  color: var(--text-dark);
+  border: 1px solid var(--accent-gold);
+  border-radius: 30px;
+  padding: 0.4rem 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  background-color: #fff;
+  border-color: var(--text-dark);
+  box-shadow: 0 0 4px rgba(251, 196, 10, 0.4);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-dark);
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-form {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
