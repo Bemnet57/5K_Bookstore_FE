@@ -12,7 +12,12 @@ import Books from "./pages/Books.jsx";
 import Login from "./pages/Login.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import Delivery from "./pages/DeliveryPage.jsx";
-
+import Dashboard from "./admin/Dashboard.jsx";
+import UserManager from "./admin/UserManager.jsx";
+import BookManager from "./admin/BookManager.jsx";
+import BookRequestQueue  from "./admin/BookRequests.jsx";
+import AdminLayout from "./admin/AdminLayout.jsx";
+import BookList from "./admin/BookList.jsx";
 
 function App() {
   
@@ -27,10 +32,18 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path = "/delivery" element = {<Delivery/>}/>
+        <Route path = "/layout" element ={<AdminLayout/>}/>
+        <Route path = "/dashboard" element ={<Dashboard/>}/>
+        <Route path = "/usermanager" element ={<UserManager/>}/>
+        <Route path = "/bookmanager" element ={<BookManager/>}/>
+        <Route path = "/booklist" element ={<BookList/>}/>
+        <Route path = "/bookrequest" element ={<BookRequestQueue/>}/>
+
       </Routes>
       <Button/>
       <BookCard/>
       <Section/>
+      
       <Footer/>
     </div>
   )

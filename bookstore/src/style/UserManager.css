@@ -1,0 +1,20 @@
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-gold {
+  background-color: #FBC40A;
+  color: #745A04;
+  border: none;
+}
+.btn-outline:hover {
+  background-color: #FBC40A;
+  color: #745A04;
+}

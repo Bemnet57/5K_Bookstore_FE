@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../style/Navbar.css";
 import { Navbar as BSNavbar, Nav, Container, Form } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
 const NavbarComponent = () => {
   const navigate = useNavigate();
@@ -12,8 +13,16 @@ const NavbarComponent = () => {
     if (query) navigate(`/books?search=${query}`);
   };
 
+  const [scrolled, setScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => setScrolled(window.scrollY > 30);
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   return (
-    <BSNavbar expand="lg" className="custom-navbar">
+    <BSNavbar expand="lg" className={`custom-navbar ${scrolled ? "scrolled" : ""}`}>
       <Container className="d-flex justify-content-between align-items-center">
         {/* Logo */}
         <Link to="/" className="navbar-logo text-decoration-none">
@@ -23,15 +32,9 @@ const NavbarComponent = () => {
 
         {/* Navigation links */}
         <Nav className="mx-auto">
-          <Link to="/books?filter=most-reads" className="nav-link">
-            Most Reads
-          </Link>
-          <Link to="/books?filter=available" className="nav-link">
-            Available
-          </Link>
-          <Link to="/books?filter=newest" className="nav-link">
-            Newest In
-          </Link>
+          <Link to="#most-read" className="nav-link">Most Reads</Link>
+          <Link to="#available" className="nav-link">Available</Link>
+          <Link to="#newest" className="nav-link">Newest In</Link>
           <Link to="/profile" className="nav-link">
             Profile
           </Link>

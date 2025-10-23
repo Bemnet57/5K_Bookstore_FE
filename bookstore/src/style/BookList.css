@@ -1,0 +1,52 @@
+.booklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.book-cover-placeholder {
+  background-color: #FEF7DE;
+  height: 180px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.book-title {
+  color: #745A04;
+  font-weight: 600;
+}
+
+.book-author {
+  color: #745A04;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.book-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Gold button */
+.btn-gold {
+  background-color: #FBC40A;
+  color: #745A04;
+  border: none;
+}
+
+.btn-gold:hover {
+  background-color: #f5b800;
+  color: #181301;
+}
+
+/* Outline button */
+.btn-outline {
+  background-color: transparent;
+  color: #FBC40A;
+  border: 1px solid #FBC40A;
+}
+
+.btn-outline:hover {
+  background-color: #FBC40A;
+  color: #745A04;
+}

@@ -1,0 +1,20 @@
+.request-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.request-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-gold {
+  background-color: transparent;
+  color: #FBC40A;
+  border: 1px solid #FBC40A;
+}
+.btn-outline:hover {
+  background-color: #FBC40A;
+  color: #745A04;
+}

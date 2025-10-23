@@ -1,0 +1,32 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.dashboard-card {
+  background-color: #FEF7DE;
+  padding: 1.5rem;
+  border-radius: 16px;
+  color: #745A04;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h3 {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.dashboard-card p {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.dashboard-recent-books ul {
+  list-style-type: disc;
+  margin-left: 1rem;
+}
+
+.dashboard-recent-books li {
+  margin-bottom: 0.3rem;
+}

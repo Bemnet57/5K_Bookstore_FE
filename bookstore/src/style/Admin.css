@@ -1,0 +1,69 @@
+/* Admin container */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #FFFCF8;
+}
+
+/* Sidebar */
+.admin-sidebar {
+  width: 220px;
+  background-color: #FEF7DE;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-logo {
+  color: #745A04;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.admin-link {
+  color: #745A04;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.admin-link:hover,
+.admin-link.active {
+  background-color: #FBC40A;
+  color: #FFFCF8;
+}
+
+/* Main content */
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Card and input styles */
+.admin-card {
+  background-color: #FEF7DE;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.admin-input {
+  background-color: #FEF7DE;
+  border: 1px solid #FBC40A;
+  color: #745A04;
+}
+
+.admin-input:focus {
+  border-color: #745A04;
+  box-shadow: 0 0 0 0.2rem rgba(251,196,10,0.25);
+  outline: none;
+}
+
+.admin-page-title {
+  color: #745A04;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
