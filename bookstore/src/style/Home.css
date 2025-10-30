@@ -1,17 +1,26 @@
-.home-page {
-  background-color: #FEF7DE;
-  min-height: 100vh;
-  color: #745A04;
+.home-container {
+  background-color: #fffcf8;
+  padding: 3rem 5rem;
 }
 
-/* Section titles inherit their style from Section.jsx */
-.no-books-text {
-  color: #745A04;
-  font-size: 1rem;
-  background-color: #FEF7DE;
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 250px;
-  margin: 0 auto;
-  opacity: 0.9;
+.home-section {
+  margin-bottom: 4rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  color: #745a04;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
 }

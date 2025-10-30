@@ -1,4 +1,4 @@
-/* Admin container */
+/* Admin container
 .admin-container {
   display: flex;
   min-height: 100vh;
@@ -66,4 +66,4 @@
   color: #745A04;
   font-weight: 700;
   margin-bottom: 1.5rem;
-}
+} 

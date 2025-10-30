@@ -1,52 +1,51 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css'
-import Button from './components/Button.jsx'
-import BookCard from './components/BookCard.jsx'
-import Section from './components/Section.jsx'
-import NavbarComponent from './components/Navbar.jsx'
-import Footer from "./components/Footer.jsx";
-import Home from "./pages/Home.jsx";
-import Books from "./pages/Books.jsx";
-import Login from "./pages/Login.jsx";
-import SignUp from "./pages/SignUp.jsx";
-import Delivery from "./pages/DeliveryPage.jsx";
-import Dashboard from "./admin/Dashboard.jsx";
-import UserManager from "./admin/UserManager.jsx";
-import BookManager from "./admin/BookManager.jsx";
-import BookRequestQueue  from "./admin/BookRequests.jsx";
-import AdminLayout from "./admin/AdminLayout.jsx";
-import BookList from "./admin/BookList.jsx";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavbarComponent from "./components/Navbar";
+import Home from "./pages/Home";
+import Books from "./pages/Books";
+import BookDetails from "./pages/BookDetails";
+import Delivery from "./pages/Delivery";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Dashboard from "./admin/Dashboard";
+import BookManager from "./admin/BookManager";
+import BookList from "./admin/BookList";
+import BookRequestQueue from "./admin/BookRequestQueue";
+import UserManager from "./admin/UserManager";
+import ProtectedRoute from "./components/ProtectedRoute";
+import AdminRoute from "./components/AdminRoute";
+import { AuthProvider } from "./context/AuthContext";
 
-function App() {
-  
-
+const App = () => {
   return (
-    <div>
-      <NavbarComponent/>
-      <Home/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path = "/Home" element = {<Books/>}/>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path = "/delivery" element = {<Delivery/>}/>
-        <Route path = "/layout" element ={<AdminLayout/>}/>
-        <Route path = "/dashboard" element ={<Dashboard/>}/>
-        <Route path = "/usermanager" element ={<UserManager/>}/>
-        <Route path = "/bookmanager" element ={<BookManager/>}/>
-        <Route path = "/booklist" element ={<BookList/>}/>
-        <Route path = "/bookrequest" element ={<BookRequestQueue/>}/>
+    <AuthProvider>
+      <Router>
+        <NavbarComponent />
+        <Routes>
+          {/* Public */}
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
 
-      </Routes>
-      <Button/>
-      <BookCard/>
-      <Section/>
-      
-      <Footer/>
-    </div>
-  )
-}
+          {/* User Routes */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/books" element={<Books />} />
+            <Route path="/book/:id" element={<BookDetails />} />
+            <Route path="/delivery" element={<Delivery />} />
+          </Route>
 
-export default App
+          {/* Admin Routes */}
+          <Route element={<AdminRoute />}>
+            <Route path="/admin/dashboard" element={<Dashboard />} />
+            <Route path="/admin/book-manager" element={<BookManager />} />
+            <Route path="/admin/book-list" element={<BookList />} />
+            <Route path="/admin/book-queue" element={<BookRequestQueue />} />
+            <Route path="/admin/users" element={<UserManager />} />
+          </Route>
+        </Routes>
+      </Router>
+    </AuthProvider>
+  );
+};
+
+export default App;

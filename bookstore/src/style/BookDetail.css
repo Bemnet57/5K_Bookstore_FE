@@ -1,0 +1,17 @@
+.book-details {
+  display: flex;
+  gap: 2rem;
+  background-color: #fffcf8;
+  padding: 4rem;
+}
+
+.book-cover {
+  flex: 1;
+  background: #fef7de;
+  height: 400px;
+}
+
+.book-info {
+  flex: 2;
+  color: #745a04;
+}

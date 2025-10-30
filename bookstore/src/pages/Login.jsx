@@ -1,65 +1,41 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 import "../style/Auth.css";
 
 const Login = () => {
-  const navigate = useNavigate();
+  const { login } = useAuth();
+  const [form, setForm] = useState({ username: "", password: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handle login here
+    login({ username: form.username, role: "user" });
   };
 
   return (
-    <Container fluid className="auth-container">
-      <Row className="auth-row">
-        {/* Image side */}
-        <Col md={6} className="auth-image-side">
-          <div className="image-placeholder">Image here</div>
-        </Col>
-
-        {/* Form side */}
-        <Col md={6} className="auth-form-side">
-          <div className="auth-form-wrapper">
-            <h2 className="auth-title">Welcome Back</h2>
-            <p className="auth-subtitle">Login to your account</p>
-
-            <Form onSubmit={handleSubmit}>
-              <Form.Group className="mb-3">
-                <Form.Label>Username or Email</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter username or email"
-                  className="auth-input"
-                />
-              </Form.Group>
-
-              <Form.Group className="mb-4">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Enter password"
-                  className="auth-input"
-                />
-              </Form.Group>
-
-              <Button type="submit" className="btn-gold w-100 mb-3">
-                Login
-              </Button>
-
-              <Button
-                variant="outline-gold"
-                className="w-100"
-                onClick={() => navigate("/signup")}
-              >
-                Create an account
-              </Button>
-            </Form>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+    <div className="auth-container">
+      <div className="auth-image"></div>
+      <div className="auth-form">
+        <h2>Welcome Back!</h2>
+        <p>Login to your account</p>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Username or Email"
+            value={form.username}
+            onChange={(e) => setForm({ ...form, username: e.target.value })}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={form.password}
+            onChange={(e) => setForm({ ...form, password: e.target.value })}
+            required
+          />
+          <button type="submit" className="gold-btn">Login</button>
+        </form>
+      </div>
+    </div>
   );
 };
 
