@@ -1,12 +1,18 @@
+/* === HOME PAGE STYLES === */
 .home-container {
   background-color: #fffcf8;
   padding: 3rem 5rem;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
+/* Each section block (Most Read, Available, etc.) */
 .home-section {
   margin-bottom: 4rem;
+  animation: fadeInUp 0.6s ease;
 }
 
+/* Header that holds section title */
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -14,13 +20,70 @@
   margin-bottom: 1.5rem;
 }
 
+/* Title text for each section */
 .section-title {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   color: #745a04;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  position: relative;
 }
 
+/* Small underline accent under each section title */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 60px;
+  height: 3px;
+  background-color: #d1a206;
+  border-radius: 2px;
+}
+
+/* Grid of books */
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  gap: 1.8rem;
+}
+
+/* Responsive layout tweaks */
+@media (max-width: 1024px) {
+  .home-container {
+    padding: 2.5rem 3rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 2rem 1.5rem;
+  }
+  .book-grid {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.3rem;
+  }
+  .home-container {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

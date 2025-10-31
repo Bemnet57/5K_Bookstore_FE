@@ -38,8 +38,8 @@ const Footer = () => {
           {/* Contact Section */}
           <Col md={4}>
             <h5 className="footer-heading">Stay Connected</h5>
-            <p className="footer-text">📧 info@bookstore.com</p>
-            <p className="footer-text">📍 Addis Ababa, Ethiopia</p>
+            <p className="footer-text">info@bookstore.com</p>
+            <p className="footer-text">Addis Ababa, Ethiopia</p>
           </Col>
         </Row>
 
